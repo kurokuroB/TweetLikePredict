@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h5>ツイートのいいね数を予測します！</h5><br>
+<form action="{% url 'predict' %}" method="post">{% csrf_token %}
+    <table>
+        <tr>
+            <div class="">
+                <th><label for="id_text" class="form-label">Tweet内容:</label></th>
+                <td>
+                    <textarea name='text' type="text" class="form-control" maxlength="192" required id="id_text" placeholder='「忘年会」という単語を含めてください。' rows='3' cols='45' aria-describedby="HelpInline"></textarea>
+                </td>
+            </div>
+        </tr>
+        <tr>
+        <div class="">
+            <th><label for="id_tweet_hour" class="form-label">ツイート予定時間(h):</label></th>
+            <td><input name='tweet_hour' type="number" min='0' max='23' class="form-control" placeholder=0~23時のいずれかの時刻を入力してください。 required id="id_tweet_hour"></td>
+        </div>
+        </tr>
+        <tr>
+        <div class="">
+            <th><label for="id_followers_count" class="form-label">フォロワー数:</label></th>
+            <td><input name='followers_count' type="number" min='0' class="form-control" required id="id_followers_count"></td>
+        </div>
+        </tr>
+    </table>
+    <input type="submit" value="送信">
+</form>
+{% endblock content %}
