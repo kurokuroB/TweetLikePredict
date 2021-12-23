@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+
+{% block header %}
+<title>入力画面</title>
+{% endblock header %}
+
 {% block content %}
 <h5>ツイートのいいね数を予測します！</h5><br>
 <form action="{% url 'predict' %}" method="post">{% csrf_token %}
