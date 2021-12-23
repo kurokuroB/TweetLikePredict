@@ -1,5 +1,7 @@
 #ignore static_folder　容量が大きいため。
 /bertapp/static/*
+#memoもignore
+/memo.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
